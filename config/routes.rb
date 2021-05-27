@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  root 'admin/dashboard#index' 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   namespace :api do
     namespace :v1, defaults: { format: :json } do
       post 'login', to: 'admin_users#login'
       resources :admin_users, only: [:create]
+      resources :notes, only: [:create]
     end
   end 
   
