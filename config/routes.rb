@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   namespace :api do
     namespace :v1, defaults: { format: :json } do
-      post 'sign_in', to: 'admin_users#sign_in'
+      post 'login', to: 'admin_users#login'
       resources :admin_users, only: [:create]
     end
   end 

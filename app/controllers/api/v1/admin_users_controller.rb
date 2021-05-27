@@ -11,14 +11,13 @@ class Api::V1::AdminUsersController < ApplicationController
     end
   end 
 
-  def sign_in
-    @user = AdminUser.find_by(email: params[:email])
-
-    if @user && @user.valid_password?(params[:password])
-      sign_in(:user, @user)
-      head(:ok)
+  def login
+    @user = AdminUser.find_by(email: params[:user][:email])
+    if @user.present? && @user.valid_password?(params[:user][:password])
+      sign_in @user
+      render json: "{result: 'login success'}", status: :ok
     else
-      head(:unprocessable_entity)
+      render json: "{result: 'login fail'}", status: :unprocessable_entity
     end
   end 
 
