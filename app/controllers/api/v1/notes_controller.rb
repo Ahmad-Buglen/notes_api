@@ -6,11 +6,12 @@ class Api::V1::NotesController < ApplicationController
     @note = current_admin_user.notes.new(note_params)
 
     if @note.valid? && @note.save
+      NoteWorker.perform_at(@note.time, @note.id)
       render :create, status: :ok
     else
       render json: @note.errors, status: :unprocessable_entity
     end
-  end 
+  end   
 
   private
 

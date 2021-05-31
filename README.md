@@ -20,7 +20,8 @@ POST "example.com:/api/v1/admin_users"
 #### Параметры:
 ```
 user[email] = example@gmail.com" string - почта нового пользователя
-user[password] = "!@#123asdQWE" string - пароль нового пользователя
+user[password] = "!@#123asdQWE" string - пароль пользователя
+user[mobile_token] = "QWERTYUIOBGFDSZXCVBN" string - токен мобильного устройства
 ```
 
 #### Успешный ответ
@@ -29,7 +30,8 @@ status: 200
 {
     "user": {
         "id": 111,
-        "email": "example@gmail.com"
+        "email": "example@gmail.com",
+        "mobile_token": "QWERTYUIOBGFDSZXCVBN"
     }
 }
 ```
@@ -82,7 +84,7 @@ POST "example.com:/api/v1/notes"
 #### Параметры:
 ```
 note[name] = "example@gmail.com" string - название заметки
-note[time] = "2022-05-27T22:21:33" string - время напоминания
+note[time] = "2022-05-31T16:33:05 +0300" string - время напоминания
 ```
 
 #### Успешный ответ

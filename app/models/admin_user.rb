@@ -4,4 +4,6 @@ class AdminUser < ApplicationRecord
   devise :database_authenticatable, 
          :recoverable, :rememberable, :validatable
   has_many :notes, dependent: :destroy
+
+  validates :email, :password, :mobile_token, presence: true
 end

@@ -2,6 +2,7 @@ json.user do
   json.call(
     @user,
     :id,
-    :email
+    :email,
+    :mobile_token
   )
 end

@@ -111,6 +111,10 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.10.0)
+    faraday (1.0.1)
+      multipart-post (>= 1.2, < 3)
+    fcm (1.0.2)
+      faraday (~> 1.0.0)
     ffi (1.15.1)
     formtastic (4.0.0)
       actionpack (>= 5.2.0)
@@ -159,6 +163,7 @@ GEM
     mini_portile2 (2.5.1)
     minitest (5.14.4)
     msgpack (1.4.2)
+    multipart-post (2.1.1)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.5.7)
@@ -284,6 +289,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   devise
+  fcm
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
